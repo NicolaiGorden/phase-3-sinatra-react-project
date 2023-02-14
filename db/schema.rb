@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_13_234058) do
+ActiveRecord::Schema.define(version: 2023_02_14_044612) do
 
   create_table "mons", force: :cascade do |t|
     t.string "nickname"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2023_02_13_234058) do
     t.string "move2"
     t.string "move3"
     t.string "move4"
+    t.string "front_sprite_img"
   end
 
 end
