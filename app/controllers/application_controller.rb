@@ -10,6 +10,12 @@ class ApplicationController < Sinatra::Base
     mons.to_json
   end
   
+  delete '/mons/:id' do
+    mon = Mon.find(params[:id])
+    mon.destroy
+    mon.to_json
+  end
+  
   post '/mons' do
     mon = Mon.create(
       nickname: params[:nickname],
