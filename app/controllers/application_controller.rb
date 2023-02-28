@@ -24,7 +24,23 @@ class ApplicationController < Sinatra::Base
       move1: params[:move1],
       move2: params[:move2],
       move3: params[:move3],
-      move4: params[:move4]
+      move4: params[:move4],
+      front_sprite_img: params[:front_sprite_img]
+    )
+    mon.to_json
+  end
+
+  patch '/mons/:id' do
+    mon = Mon.find(params[:id])
+    mon.update(
+      nickname: params[:nickname],
+      species: params[:species],
+      ability: params[:ability],
+      move1: params[:move1],
+      move2: params[:move2],
+      move3: params[:move3],
+      move4: params[:move4],
+      front_sprite_img: params[:front_sprite_img]
     )
     mon.to_json
   end
