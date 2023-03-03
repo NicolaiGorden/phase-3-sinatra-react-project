@@ -9,6 +9,11 @@ class ApplicationController < Sinatra::Base
     mons = Mon.all.order(:id).reverse
     mons.to_json
   end
+
+  get '/mons/:id' do
+    mon = Mon.find(params[:id])
+    mon.to_json
+  end
   
   delete '/mons/:id' do
     mon = Mon.find(params[:id])
@@ -25,7 +30,6 @@ class ApplicationController < Sinatra::Base
       move2: params[:move2],
       move3: params[:move3],
       move4: params[:move4],
-      front_sprite_img: params[:front_sprite_img]
     )
     mon.to_json
   end
@@ -40,7 +44,6 @@ class ApplicationController < Sinatra::Base
       move2: params[:move2],
       move3: params[:move3],
       move4: params[:move4],
-      front_sprite_img: params[:front_sprite_img]
     )
     mon.to_json
   end
