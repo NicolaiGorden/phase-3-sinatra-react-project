@@ -48,4 +48,14 @@ class ApplicationController < Sinatra::Base
     mon.to_json
   end
 
+  get '/trainers' do
+    trainers = Trainer.all.order(:id).reverse
+    trainers.to_json
+  end
+
+  get '/leagues' do
+    leagues = League.all.order(:id).reverse
+    leagues.to_json
+  end
+
 end
